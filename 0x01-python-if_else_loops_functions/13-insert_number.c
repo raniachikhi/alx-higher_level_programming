@@ -11,31 +11,31 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-    listint_t *node = *head, *new;
+	listint_t *node = *head, *new;
 
-    // Create a new node and allocate memory for it
-    new = malloc(sizeof(listint_t));
-    if (new == NULL)
-        return (NULL);
-    new->n = number;
+    /* Create a new node and allocate memory for it*/
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = number;
 
-    // Check if the list is empty or the number to insert is
-    // smaller than the head
-    if (node == NULL || node->n >= number)
-    {
-        new->next = node;
-        *head = new;
-        return (new);
-    }
+    /* Check if the list is empty or the number to insert is*/
+    /* smaller than the head */
+	if (node == NULL || node->n >= number)
+	{
+		new->next = node;
+		*head = new;
+		return (new);
+	}
 
-    // Traverse the list to find the appropriate position
-    // to insert the new node
-    while (node && node->next && node->next->n < number)
-        node = node->next;
+    /* Traverse the list to find the appropriate position */
+    /* to insert the new node */
+	while (node && node->next && node->next->n < number)
+		node = node->next;
 
-    // Insert the new node
-    new->next = node->next;
-    node->next = new;
+    /* Insert the new node */
+	new->next = node->next;
+	node->next = new;
 
-    return (new);
+	return (new);
 }
