@@ -2,7 +2,6 @@
 # 12-fizzbuzz.py
 
 def fizzbuzz():
-    """Print numbers from 1 to 100 with substitutions for multiples of three and five."""
     # Iterate over the numbers from 1 to 100
     for number in range(1, 101):
         # Check if the number is divisible by both 3 and 5
