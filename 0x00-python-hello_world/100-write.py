@@ -2,32 +2,31 @@
 
 /**
  * check_cycle - checks if a linked list contains a cycle
- * @list: Pointer to the head of the linked list
+ * @list: linked list to check
  *
- * Return: 1 if the list has a cycle, 0 if it doesn't
+ * Return: 1 if the list has a cycle, 0 if it doesn t
  */
 int check_cycle(listint_t *list)
 {
-	/* Initialize two pointers, 'slow' and 'fast', to the head of the list */
 	listint_t *slow = list;
 	listint_t *fast = list;
 
-	/* If the list is empty, there can't be a cycle, so return 0 */
+	/* If the list is empty, there can t be a cycle, so return 0 */
 	if (!list)
 		return (0);
 
 	/*
-	 * Use the "Floyd's cycle-finding algorithm" to detect a cycle:
-	 * Move 'slow' one step at a time and 'fast' two steps at a time.
-	 * If there is a cycle, the 'fast' pointer will eventually catch up
-	 * to the 'slow' pointer.
+	 * Use the slow and fast pointer approach to detect a cycle:
+	 * Move slow one step at a time and fast two steps at a time.
+	 * If there is a cycle, the fast pointer will eventually catch up
+	 * to the slow pointer.
 	 */
 	while (slow && fast && fast->next)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
 
-		/* If the 'slow' and 'fast' pointers meet, a cycle is detected */
+		/* If the slow and fast pointers meet, a cycle is detected */
 		if (slow == fast)
 			return (1);
 	}
