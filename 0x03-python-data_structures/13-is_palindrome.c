@@ -1,5 +1,7 @@
 #include "lists.h"
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
 /**
  * palindrome- check if a sublist is a palindrome using recursion
  * @left: pointer to the leftmost node of the sublist
@@ -17,9 +19,9 @@ int palindrome(listint_t **left, listint_t *right)
 
 		if (response != 0)
 		{
-			response = ((right ->n == (*left)->n);
+			response = (right->n == (*left)->n);
 			*left = (*left)->next;
-			return response;
+			return (response);
 		}
 
 		return (0);
@@ -36,10 +38,10 @@ int palindrome(listint_t **left, listint_t *right)
  */
 int is_palindrome(listint_t **head)
 {
-	if (head == NULL || *head == NULL)
+	if (head == NULL)
 	{
 		return (0);
 	}
 
-	return palindrome(head, *head);
+	return (palindrome(head, *head));
 }
