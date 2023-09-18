@@ -1,9 +1,20 @@
 #!/usr/bin/node
-// a script that searches the second biggest integer in the list of arguments.
 
 if (process.argv.length <= 3) {
   console.log(0);
 } else {
-  const list = process.argv.sort();
-  console.log(list.reverse()[1]);
+  // Extract the integer values and convert them to numbers.
+  const numbers = process.argv.slice(2).map(Number);
+
+  // Check if any conversion resulted in NaN (non-numeric input).
+  if (numbers.some(isNaN)) {
+    console.log("Invalid input. Please provide a list of integers.");
+  } else {
+    // Sort the numbers in descending order.
+    const sortedNumbers = numbers.sort((a, b) => b - a);
+
+    // Output the second largest number.
+    console.log(sortedNumbers[1]);
+  }
 }
+
