@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that prints the first State object from the database using the SQLAlchemy module.
+Script that prints the first State object from the database
+using the SQLAlchemy module.
 """
 
 from model_state import Base, State
