@@ -6,7 +6,6 @@ in a database.
 
 from sqlalchemy import Column, Integer, String, ForeignKey, text
 from relationship_state import Base
-
 class City(Base):
     """
     City class that inherits from Base.
