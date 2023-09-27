@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that lists all State objects from the database using the SQLAlchemy module.
+Script that lists all State objects from the database using
+the SQLAlchemy module.
 """
 
 from model_state import Base, State
