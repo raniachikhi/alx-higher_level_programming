@@ -14,9 +14,9 @@ class State(Base):
     State class that inherits from Base
 
     Attributes:
-        id: represents a column of an auto-generated, unique 
+        id: represents a column of an auto-generated, unique
         integer, can’t be null and is a primary key
-        name: represents a column of a string with 
+        name: represents a column of a string with
         maximum 128 characters and can’t be null
     """
     __tablename__ = "states"
