@@ -5,14 +5,13 @@ http://0.0.0.0:5000/search_user with the letter as a parameter."""
 import requests
 from sys import argv
 import json
-
 if __name__ == "__main__":
     data = {"q": argv[1] if len(argv) > 1 else ""}
     request = requests.post("http://0.0.0.0:5000/search_user", data=data)
     try:
-        json = request.json()
+        json_data = request.json()
         if json:
-            print("[{}] {}".format(json.get("id"), json.get("name")))
+            print("[{}] {}".format(json_data.get("id"), json_data.get("name")))
         else:
             print("No result")
     except json.JSONDecodeError:
