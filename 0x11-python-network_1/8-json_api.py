@@ -1,22 +1,20 @@
 #!/usr/bin/python3
+"""A script that displays the value of the X-Request-Id variable
+found in the header of the response.
 """
-A script that takes a letter and sends a POST request.
-"""
+
 
 if __name__ == "__main__":
-    import requests
+    from requests import post
     from sys import argv
 
-    letter = argv[1] if len(argv) > 1 else ""
-
-    response = requests.post('http://0.0.0.0:5000/search_user', data={'q': letter})
-
+    q = argv[1] if len(argv) > 1 else ""
+    r = post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
-        user_info = response.json()
-
-        if user_info:
-            print("[{}] {}".format(user_info.get("id"), user_info.get("name")))
-        else:
+        response = r.json()
+        if response == {}:
             print('No result')
+        else:
+            print("[{}] {}".format(response.get("id"), response.get("name")))
     except ValueError:
         print('Not a valid JSON')
