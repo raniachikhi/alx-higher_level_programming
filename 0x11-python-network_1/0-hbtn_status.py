@@ -1,14 +1,18 @@
 #!/usr/bin/python3
 """
-Fetches the status and displays information about the response.
+A script that fetches the status of https://alx-intranet.hbtn.io.
 """
 
 if __name__ == "__main__":
     import urllib.request
 
-    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res:
-        content = res.read()
+    url = 'https://alx-intranet.hbtn.io/status'
+
+    with urllib.request.urlopen(url) as response:
+        content = response.read()
+        decoded_content = content.decode('utf-8')
+
         print("Body response:")
-        print("\t- Type: {}".format(type(content)))
-        print("\t- Content: {}".format(content))
-        print("\t- UTF-8 Content: {}".format(content.decode('utf-8')))
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
+        print("\t- utf8 content: {}".format(decoded_content))
