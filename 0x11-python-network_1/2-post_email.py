@@ -1,18 +1,22 @@
 #!/usr/bin/python3
 """
-A script that sends a POST request to a URL with an email.
+A script that takes a URL and an email, sends a POST request.
 """
+
 if __name__ == "__main__":
     from urllib.request import urlopen, Request
     from urllib.parse import urlencode
-    from sys import argv
+    import sys
+
+    # Get URL and email from command-line arguments
+    url = sys.argv[1]
+    email = sys.argv[2]
 
     # Prepare the POST request with the provided email parameter
-    values = {"email": argv[2]}
-    request = Request(argv[1], urlencode(values).encode("ascii"))
+    values = {"email": email}
+    request = Request(url, urlencode(values).encode("ascii"))
 
-    # Send the request and display the X-Request-Id value and response body
+    # Send the request and display the response body
     with urlopen(request) as response:
-        x_request_id = response.headers.get('X-Request-Id')
-        print(f"X-Request-Id: {x_request_id}")
-        print(response.read().decode('utf-8'))
+        content = response.read().decode('utf-8')
+        print(content)
