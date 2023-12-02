@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-A simple script that fetches the status of https://alx-intranet.hbtn.io and displays information about the response.
-Usage:
-    $ python3 script_name.py
+Fetches the status and displays information about the response.
 """
 
 if __name__ == "__main__":
