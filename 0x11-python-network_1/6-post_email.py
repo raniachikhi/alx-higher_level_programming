@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A script that takes a URL and an email address, sends a POST request to the specified URL.
+A script takes a URL and an email address, sends a POST request to the URL.
 """
 
 if __name__ == "__main__":
