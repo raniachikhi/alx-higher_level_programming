@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A script that send a POST request to 'http://0.0.0.0:5000/search_user'.
+A script sends a POST request to 'http://0.0.0.0:5000/search_user'.
 """
 if __name__ == "__main__":
     from requests import post
