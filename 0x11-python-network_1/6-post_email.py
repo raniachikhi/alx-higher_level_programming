@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """
-A script that uses the 'requests' library to send a POST request to a URL specified.
+A script that takes a URL and an email address, sends a POST request to the specified URL.
 """
+
 if __name__ == "__main__":
-    from requests import post
-    from sys import argv
+    import requests
+    import sys
 
-    # Send a POST request to the specified URL with the provided email parameter
-    response = post(argv[1], data={'email': argv[2]})
+    url = sys.argv[1]
+    email = sys.argv[2]
 
-    # Display the body of the response
+    response = requests.post(url, data={'email': email})
+
     print(response.text)
