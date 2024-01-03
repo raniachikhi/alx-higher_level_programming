@@ -8,4 +8,5 @@ fs.readFile(process.argv[2], 'utf8', function (err, data) {
   } else {
     process.stdout.write(data);
   }
-}); 
+});
+
